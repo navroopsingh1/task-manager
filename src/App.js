@@ -163,26 +163,26 @@ class App extends Component {
       )
     }, this);
 
-    if (this.state.sort == "By Date Added (New to Old)") {
+    if (this.state.sort === "By Date Added (New to Old)") {
       toShow = this.state.events.reverse();
     }
-    if (this.state.sort == "By Date Added (Old to New)") {
+    if (this.state.sort === "By Date Added (Old to New)") {
       toShow = this.state.events;
     }
 
-    if (this.state.sort == "By Event Weight (High to Low)") {
+    if (this.state.sort === "By Event Weight (High to Low)") {
       toShow = this.state.events.sort((a, b) => (b.weight) - (a.weight));
     }
 
-    if (this.state.sort == "By Event Weight (Low to High)") {
+    if (this.state.sort === "By Event Weight (Low to High)") {
       toShow = this.state.events.sort((a, b) => (a.weight) - (b.weight));
     }
-    if (this.state.sort == "By Event Date (After to Before)") {
+    if (this.state.sort === "By Event Date (After to Before)") {
       toShow = this.state.events.sort(function(a,b){
         return new Date(b.endTime) - new Date(a.endTime);
       });
     }
-    if (this.state.sort == "By Event Date (Before to After)") {
+    if (this.state.sort === "By Event Date (Before to After)") {
       toShow = this.state.events.sort(function(a,b){
         return new Date(a.endTime) - new Date(b.endTime);
       });
